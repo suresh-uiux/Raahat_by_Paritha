@@ -112,6 +112,82 @@ body{
   }
 }
 
+
+
+/****************
+***carosel rotate start****
+**************/
+
+
+.gal h1{
+  width: 40%;
+  font-size: 50px;
+  color: white;
+
+
+}
+
+.gallery {
+  --s: 350px; /* the size */
+  
+  display: grid;
+  transform-style: preserve-3d;
+  --_p: perspective(calc(2.5*var(--s)));
+  animation: r 9s infinite cubic-bezier(.5,-0.5,.5,1.5);
+}
+.gallery img {
+  grid-area: 1/1;
+  width: var(--s);
+  aspect-ratio: 1;
+  object-fit: cover;
+  transform: var(--_t,) translateZ(calc(var(--s)/2));
+  border-radius: 20px;
+}
+.gallery img:nth-child(2) {--_t: rotateX(-90deg)}
+.gallery img:nth-child(3) {--_t: rotateY( 90deg)}
+.gallery img:nth-child(4) {--_t: rotateX(180deg) rotate( 90deg)}
+.gallery img:nth-child(5) {--_t: rotateX( 90deg)}
+.gallery img:nth-child(6) {--_t: rotateY(-90deg)}
+
+@keyframes r {
+  0%,3%   {transform: var(--_p) rotate3d(0, 0, 0, 0deg)}
+  14%,19% {transform: var(--_p) rotate3d(-1, 1, 0, 180deg)}
+  31%,36% {transform: var(--_p) rotate3d(0, -1, 0, 90deg)}
+  47%,52% {transform: var(--_p) rotate3d(1, 0, 0, 90deg)}
+  64%,69% {transform: var(--_p) rotate3d(1, 0, 0, -90deg)}
+  81%,86% {transform: var(--_p) rotate3d(0, 1, 0, 90deg)}
+  97%,100%{transform: var(--_p) rotate3d(0, 0, 0, 0deg)}
+}
+
+
+.gal {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background: #556270;
+  animation: b 9s infinite;
+}
+
+@keyframes b {
+  0%,3%   {background: #774F38}
+  14%,19% {background: #C5E0DC}
+  31%,36% {background: #036564}
+  45%,55% {background: #B38184}
+  64%,69% {background: #424254}
+  81%,86% {background: #4DBCE9}
+  97%,to  {background: #774F38}
+}
+
+
+
+
+/****************
+***carosel rotate end****
+**************/
+
+
 /************
 *** Hero sec ***
 *********/
@@ -128,7 +204,7 @@ h1, h2, h3{
 }
 
 p{
-  font-family: "Patua One", serif;
+  font-family: sans-serif;
 }
 
 a{
@@ -168,6 +244,7 @@ a{
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: 999999;
   background: rgba(11,28,61,0.6);
   display: flex;
   justify-content: center;
@@ -287,7 +364,7 @@ ul li a:hover{
     border: 2px solid darkgray;
     transition: .10s;
     transform: translateY(-4px);
-    box-shadow: 2px 2px 3px 1px lightcyan;
+    box-shadow: 0px 0px 3px 1px beige;
 }
 
 .rigister{
@@ -296,8 +373,6 @@ ul li a:hover{
     font-size: 30px;
     cursor: pointer;
 }
-
-
 
 
 
@@ -387,7 +462,7 @@ ul li a:hover{
 
 
 .row .img{
-    width:80%;
+    width:60%;
     height: 500px;
     padding: 20px;
     border-radius: 60px 10px 60px 10px;
@@ -459,13 +534,19 @@ ul li a:hover{
 .card{
 width: 30%;
 padding: 10px;
-border: 2px solid darkgray;
 border-radius: 20px;
 }
+
+
 
 .card img{
     width: 100%;
     border-radius: 20px;
+}
+
+.card img:hover{
+  transform: scale(1.04);
+  transition: 1s;
 }
 
 
@@ -820,3 +901,267 @@ textarea{
     height:350px;
   }
 }
+
+
+
+/*******************
+*****collection-section start***
+***************/
+.zenith-stage{
+  padding:100px 5%;
+  background:linear-gradient(#f5f1e8,#e7dfcf);
+  overflow:hidden;
+}
+
+.zenith-frame{
+  perspective:1800px;
+  position:relative;
+}
+
+.zenith-belt{
+  display:flex;
+  gap:34px;
+  transform-style:preserve-3d;
+  transition:1.4s cubic-bezier(.22,.61,.36,1);
+}
+
+/* Items */
+.zenith-unit{
+  min-width:340px;
+  height:540px;
+  border-radius:18px;
+  overflow:hidden;
+  position:relative;
+  transform:scale(.75) rotateY(22deg);
+  transition:1.4s cubic-bezier(.22,.61,.36,1);
+  filter:brightness(.55);
+}
+
+.zenith-unit img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* Gradient overlay (no blur) */
+.zenith-unit::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    to top,
+    rgba(0,0,0,.55),
+    rgba(0,0,0,.15),
+    transparent
+  );
+}
+
+/* Gold text */
+.zenith-unit h3{
+  position:absolute;
+  bottom:28px;
+  left:28px;
+  letter-spacing:3px;
+  font-size:16px;
+  z-index:2;
+  background:linear-gradient(90deg,#d4af37,#fff3b0,#d4af37);
+  background-size:200%;
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+/* Spotlight */
+.zenith-focus{
+  transform:scale(1) rotateY(0);
+  filter:brightness(1);
+  box-shadow:
+    0 0 35px rgba(212,175,55,.45),
+    0 0 90px rgba(212,175,55,.25);
+}
+
+.zenith-focus h3{
+  animation:zenithShine 2.5s linear infinite;
+}
+
+@keyframes zenithShine{
+  to{background-position:200%}
+}
+
+/* Side depth */
+.zenith-dim{
+  transform:scale(.65) rotateY(28deg);
+  filter:brightness(.45);
+}
+
+/* Luxury controls */
+.zenith-left,
+.zenith-right{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:32px;
+  color:var(--sec);
+  background:var(--primary);
+  padding:14px 20px;
+  border-radius:50%;
+  cursor:pointer;
+  box-shadow:0 0 25px rgba(212,175,55,.35);
+  transition:.4s;
+  z-index:5;
+}
+
+.zenith-left:hover,
+.zenith-right:hover{
+  color:white;
+}
+
+.zenith-left{left:-10px;}
+.zenith-right{right:-10px;}
+
+/*******************
+*****collection-section end***
+***************/
+
+
+
+
+/*************************
+*****appointment sec start***
+********************/
+
+
+
+/* SECTION */
+.atelier-booking{
+  height:50vh;
+  background:url("images/collec\ \(1\).jpg")
+  center/cover no-repeat;
+  background-attachment: fixed;
+  display:flex;
+  align-items:end;
+  justify-content:center;
+  text-align:center;
+  color:white;
+}
+.atelier-booking h2{
+  color: var(--sec);
+}
+.atelier-layer{
+  height:50vh;
+  background:rgba(0,0,0,.45);
+  padding:60px 20px;
+  width:100%;
+}
+
+.atelier-layer h2{
+  letter-spacing:3px;
+  font-weight:500;
+}
+
+.atelier-layer p{
+  max-width:620px;
+  margin:15px auto 30px;
+  line-height:1.6;
+}
+
+/* BUTTONS */
+.atelier-actions{
+  display:flex;
+  gap:20px;
+  justify-content:center;
+}
+
+.atelier-btn{
+  padding:12px 28px;
+  font-size:14px;
+  letter-spacing:2px;
+  cursor:pointer;
+}
+
+.outline{
+  border:1px solid white;
+  background:transparent;
+  color:white;
+}
+
+.solid{
+  background:white;
+  border:none;
+  color:var(--primary);
+}
+
+/* BOOKING WINDOW */
+.couture-window{
+  position:fixed;
+  z-index: 9999;
+  inset:0;
+  background:rgba(0,0,0,.6);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  opacity:0;
+  visibility:hidden;
+  transition:.4s;
+}
+
+.couture-window.active{
+  opacity:1;
+  visibility:visible;
+}
+
+.couture-box{
+  background:white;
+  padding:40px;
+  width:360px;
+  border-radius:10px;
+  position:relative;
+  animation:coutureRise .4s ease;
+}
+
+@keyframes coutureRise{
+  from{transform:translateY(-25px);opacity:0;}
+  to{transform:translateY(0);opacity:1;}
+}
+
+/* FORM */
+.couture-box input,
+.couture-box textarea{
+  width:100%;
+  padding:12px;
+  margin-bottom:12px;
+  border:1px solid #ccc;
+}
+
+.couture-submit{
+  width:100%;
+  padding:12px;
+  background:black;
+  color:white;
+  border:none;
+  cursor:pointer;
+}
+
+.couture-exit{
+  position:absolute;
+  top:10px;
+  right:15px;
+  font-size:22px;
+  cursor:pointer;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+  .couture-box{
+    width:90%;
+    padding:25px;
+  }
+
+  .atelier-actions{
+    flex-direction:column;
+  }
+}
+
+
+/*************************
+*****appointment sec end***
+********************/

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Raahat-by-Paritha | A Luxury Bespoke Menswear Fashion House</title>
-    <link rel="icon"  href="images/log.jpeg" type="image">
+    <link rel="icon" href="images/log.jpeg" type="image">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,6 +21,7 @@
         rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <link
         href="https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Aldrich&family=Asimovian&family=Bebas+Neue&family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Dancing+Script:wght@400..700&family=Libertinus+Keyboard&family=Pacifico&family=Rubik+Storm&family=Salsa&display=swap"
         rel="stylesheet">
@@ -75,62 +76,62 @@
 
     <section class="hero">
 
-  <!-- Slides -->
-  <div class="slide active" style="background-image:url('images/slide\ \(3\).jpg');">
-    <div class="glass">
-      <h1>Timeless Bespoke Elegance</h1>
-      <p>Crafted for gentlemen who value luxury and precision tailoring.</p>
-      <button>Explore Collection</button>
-    </div>
-  </div>
+        <!-- Slides -->
+        <div class="slide active" style="background-image:url('images/slide\ \(3\).jpg');">
+            <div class="glass">
+                <h1>Timeless Bespoke Elegance</h1>
+                <p>Crafted for gentlemen who value luxury and precision tailoring.</p>
+                <button>Explore Collection</button>
+            </div>
+        </div>
 
-  <div class="slide" style="background-image:url('images/slide\ \(4\).jpg');">
-    <div class="glass">
-      <h1>Wedding Luxury Wear</h1>
-      <p>Look exceptional on your most memorable day.</p>
-      <button>View Wedding</button>
-    </div>
-  </div>
+        <div class="slide" style="background-image:url('images/slide\ \(4\).jpg');">
+            <div class="glass">
+                <h1>Wedding Luxury Wear</h1>
+                <p>Look exceptional on your most memorable day.</p>
+                <button>View Wedding</button>
+            </div>
+        </div>
 
-  <div class="slide" style="background-image:url('images/slide\ \(1\).jpg');">
-    <div class="glass">
-      <h1>Modern Royalty</h1>
-      <p>Where contemporary meets classic tailoring.</p>
-      <button>Discover Style</button>
-    </div>
-  </div>
+        <div class="slide" style="background-image:url('images/slide\ \(1\).jpg');">
+            <div class="glass">
+                <h1>Modern Royalty</h1>
+                <p>Where contemporary meets classic tailoring.</p>
+                <button>Discover Style</button>
+            </div>
+        </div>
 
-  <div class="slide" style="background-image:url('images/slide\ \(5\).jpg');">
-    <div class="glass">
-      <h1>Premium Fabrics</h1>
-      <p>Only the finest materials for true luxury.</p>
-      <button>Our Fabrics</button>
-    </div>
-  </div>
+        <div class="slide" style="background-image:url('images/slide\ \(5\).jpg');">
+            <div class="glass">
+                <h1>Premium Fabrics</h1>
+                <p>Only the finest materials for true luxury.</p>
+                <button>Our Fabrics</button>
+            </div>
+        </div>
 
-  <div class="slide" style="background-image:url('images/slide\ \(2\).jpg');">
-    <div class="glass">
-      <h1>Signature Collection</h1>
-      <p>Designed for bold and refined personalities.</p>
-      <button>Shop Now</button>
-    </div>
-  </div>
+        <div class="slide" style="background-image:url('images/slide\ \(2\).jpg');">
+            <div class="glass">
+                <h1>Signature Collection</h1>
+                <p>Designed for bold and refined personalities.</p>
+                <button>Shop Now</button>
+            </div>
+        </div>
 
-  <div class="slide" style="background-image:url('images/slide\ \(6\).jpg');">
-    <div class="glass">
-      <h1>Luxury Redefined</h1>
-      <p>Experience bespoke like never before.</p>
-      <button>Book Consultation</button>
-    </div>
-  </div>
+        <div class="slide" style="background-image:url('images/slide\ \(6\).jpg');">
+            <div class="glass">
+                <h1>Luxury Redefined</h1>
+                <p>Experience bespoke like never before.</p>
+                <button>Book Consultation</button>
+            </div>
+        </div>
 
-  <!-- Controls -->
-  <div class="controls">
-    <span onclick="prev()"><i class="fa-solid fa-circle-arrow-left"></i></span>
-    <span onclick="next()"><i class="fa-solid fa-circle-arrow-right"></i></span>
-  </div>
+        <!-- Controls -->
+        <div class="controls">
+            <span onclick="prev()"><i class="fa-solid fa-circle-arrow-left"></i></span>
+            <span onclick="next()"><i class="fa-solid fa-circle-arrow-right"></i></span>
+        </div>
 
-</section>
+    </section>
 
 
 
@@ -165,6 +166,139 @@
     </section>
 
 
+
+    <!---------------------
+    -----Appointment sec start----
+    --------------------->
+<section class="atelier-booking">
+
+  <div class="atelier-layer">
+
+    <h2>LUXURY, TAILORED TO PERFECTION</h2>
+
+    <p>
+      Discover bespoke craftsmanship and personal styling.
+      Visit our studio or reserve a private consultation.
+    </p>
+
+    <div class="atelier-actions">
+      <a href="#contact" class="atelier-btn outline">
+        VISIT US
+      </a>
+
+      <a href="#" class="atelier-btn solid" id="coutureTrigger">
+        APPOINTMENT
+      </a>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- BOOKING WINDOW -->
+<div class="couture-window" id="coutureWindow">
+
+  <div class="couture-box">
+
+    <span class="couture-exit" id="coutureExit">&times;</span>
+
+    <h3>Book Your Appointment</h3>
+
+    <form>
+
+      <input type="text" placeholder="Full Name" required>
+      <input type="email" placeholder="Email Address" required>
+      <input type="tel" placeholder="Phone Number" required>
+
+      <input type="date" required>
+      <input type="time" required>
+
+      <textarea placeholder="Your Requirement"></textarea>
+
+      <button type="submit" class="couture-submit">
+        Confirm Booking
+      </button>
+
+    </form>
+
+  </div>
+
+</div>
+
+
+     <!---------------------
+    -----Appointment sec end----
+    --------------------->
+    <!-------------------------
+    -------gallery start-------
+    --------------------------->
+
+
+    <section class="gal">
+        <h1 >A Luxury Bespoke Menswear Fashion House</h1>
+        <div class="gallery">
+            <img src="images/slide (2).jpg" alt="a hot air balloon">
+            <img src="images/collec (2).jpg" alt="a clock">
+            <img src="images/slide (3).jpg" alt="a sky photo of an old city">
+            <img src="images/slide (7).jpg" alt="a small boat">
+            <img src="images/collec (6).jpg" alt="a lonely man :(">
+            <img src="images/Weds (3).jpg" alt="a forest">
+        </div>
+    </section>
+
+    <!-------------------------
+    -------gallery end-------
+    --------------------------->
+
+
+    <!-------------------------
+    -------Collection start-------
+    --------------------------->
+ 
+<section class="zenith-stage">
+
+  <div class="zenith-frame">
+
+    <div class="zenith-belt">
+
+      <div class="zenith-unit">
+        <img src="images/carousel (1).jpg">
+        <h3>LEHENGA</h3>
+      </div>
+
+      <div class="zenith-unit">
+        <img src="images/carousel (3).jpg">
+        <h3>FUSION</h3>
+      </div>
+
+      <div class="zenith-unit">
+        <img src="images/carousel (2).jpg">
+        <h3>SHERWANI</h3>
+      </div>
+
+      <div class="zenith-unit">
+        <img src="images/carousel (4).jpg">
+        <h3>SAREES</h3>
+      </div>
+
+      <div class="zenith-unit">
+        <img src="images/collec (4).jpg">
+        <h3>INDO-WESTERN</h3>
+      </div>
+
+    </div>
+
+    <div class="zenith-left">&#10094;</div>
+    <div class="zenith-right">&#10095;</div>
+
+  </div>
+
+</section>
+
+    <!-------------------------
+    -------Collection end-------
+    --------------------------->
 
 
     <section class="wedding" id="wedding">
@@ -345,6 +479,7 @@
     </section>
 
 
+
     <section class="luxury-blog" id="blog">
 
         <h2 class="blog-title">Our Journal</h2>
@@ -481,66 +616,7 @@
 
 
 
-    <script>
-
-let slides = document.querySelectorAll(".slide");
-let index = 0;
-
-function showSlide(i){
-  slides.forEach(s => s.classList.remove("active"));
-  slides[i].classList.add("active");
-}
-
-function next(){
-  index = (index + 1) % slides.length;
-  showSlide(index);
-}
-
-function prev(){
-  index = (index - 1 + slides.length) % slides.length;
-  showSlide(index);
-}
-
-/* Auto Slide */
-setInterval(next, 2000);
-setInterval(prev, 2000)
-
-
-
-
-
-        const userBtn = document.getElementById("userBtn");
-        const popup = document.getElementById("popup");
-        const closeBtn = document.getElementById("closeBtn");
-
-        userBtn.onclick = () => {
-            popup.classList.add("show");
-        }
-
-        closeBtn.onclick = () => {
-            popup.classList.remove("show");
-        }
-
-        window.onclick = (e) => {
-            if (e.target == popup) {
-                popup.classList.remove("show");
-            }
-        }
-
-
-        let slide = document.querySelectorAll(".slide");
-        let inde = 0;
-
-        function showSlides() {
-            slide.forEach(s => s.classList.remove("active"));
-            inde = (inde + 1) % slide.length;
-            slide[inde].classList.add("active");
-        }
-
-        setInterval(showSlides, 2000);
-
-
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
