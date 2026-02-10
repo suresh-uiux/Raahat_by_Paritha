@@ -150,3 +150,15 @@ window.onclick = (e)=>{
   }
 };
 
+
+
+const heritageImages = document.querySelectorAll(".heritage-frame");
+let heritageStep = 0;
+
+setInterval(()=>{
+  heritageImages[heritageStep].classList.remove("active");
+
+  heritageStep = (heritageStep + 1) % heritageImages.length;
+
+  heritageImages[heritageStep].classList.add("active");
+},2500);
