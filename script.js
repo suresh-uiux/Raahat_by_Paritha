@@ -162,3 +162,6 @@ setInterval(()=>{
 
   heritageImages[heritageStep].classList.add("active");
 },2500);
+
+
+
